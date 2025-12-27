@@ -1516,18 +1516,23 @@ class CognitiveMonitorV7_3:
         self._load_ml_model()
 
     def _load_ml_model(self):
-        """Load the pre-trained Gradient Boosting model"""
-        try:
-            # 👇 UPDATE THIS PATH to your actual file location 👇
-            model_path = r"C:\Users\rapol\Downloads\lab_analysis_v6_0_grounded\phase2_complete_v6\error_model_v6.pkl"
+    """Load the pre-trained Gradient Boosting model (optional)"""
+    try:
+        script_dir = Path(__file__).parent.resolve()
+        model_dir = script_dir / "models"
+        model_path = model_dir / "error_model_v6.pkl"
 
-            data = joblib.load(model_path)
-            self.ml_model = data['model']
-            self.ml_features = data['features']
-            self.ml_scaler = data['scaler']
-            print("✅ ML Error Model loaded successfully")
-        except Exception as e:
-            print(f"⚠️ ML Model not found (skipping error prediction): {e}")
+        data = joblib.load(model_path)
+        self.ml_model = data['model']
+        self.ml_features = data['features']
+        self.ml_scaler = data['scaler']
+        print(f"✅ ML Error Model loaded from {model_path}")
+    except Exception as e:
+        print(f"⚠️ ML Model not found (skipping error prediction): {e}")
+        self.ml_model = None
+        self.ml_features = None
+        self.ml_scaler = None
+
 
     def predict_error_risk(self, z_scores):
         """Predict probability of error (0-100%) using 32-feature vector"""
@@ -1662,4 +1667,5 @@ class CognitiveMonitorV7_3:
                 output[f'z_{key}'] = val
 
         return output
+
 
