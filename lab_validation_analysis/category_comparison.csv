@@ -1,0 +1,4 @@
+Category,N Sessions,Mean Drift %,Optimal Eff,Drift Eff,Eff Drop (abs),Eff Drop (%),Total Optimal Trials,Total Drift Trials
+HIGH,25,24.3%,40.63,30.80,9.83,46.3%,"22,883","8,222"
+MEDIUM,14,13.2%,42.12,31.17,10.95,47.4%,"16,008","2,691"
+LOW,9,7.5%,43.74,34.50,9.24,29.7%,"7,209",681
