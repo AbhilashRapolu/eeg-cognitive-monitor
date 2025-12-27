@@ -1,0 +1,38 @@
+================================================================================
+EEG COGNITIVE MONITORING - LAB VALIDATION REPORT
+================================================================================
+
+Dataset: 48 sessions (16 subjects × 3 sessions each)
+Total trials: 62,494
+
+EFFICIENCY ANALYSIS (Optimal vs Drift States)
+────────────────────────────────────────────────────────────────────────────────
+  Optimal mean efficiency : 39.45 ± 2.65
+  Drift mean efficiency   : 33.89 ± 5.98
+  Efficiency gap (Δ)      : 5.56 points
+  Percentage drop         : 14.1%
+  Cohen's d (effect size) : 1.202 (very large)
+  Welch t-test p-value    : 1.5e-07 (highly significant)
+
+CUMULATIVE DRIFT CATEGORIZATION
+────────────────────────────────────────────────────────────────────────────────
+  LOW     n= 8 sessions ( 16.7%) | drift= 8.11% | eff=40.43
+  MEDIUM  n=14 sessions ( 29.2%) | drift=13.47% | eff=40.71
+  HIGH    n=26 sessions ( 54.2%) | drift=25.49% | eff=38.46
+
+KEY FINDINGS
+────────────────────────────────────────────────────────────────────────────────
+  ✓ Drift states consistently reduce efficiency by 5.56 points
+  ✓ Effect size (d=1.20) indicates very large practical significance
+  ✓ High-drift sessions show significantly lower efficiency
+  ✓ Relationship is statistically significant (p < 0.001)
+
+RECOMMENDATIONS
+────────────────────────────────────────────────────────────────────────────────
+  • Monitor cumulative drift % as key performance indicator
+  • Intervene when drift > 15% (HIGH category)
+  • Target maintenance of drift < 10% for optimal performance
+
+Generated: 2025-12-27 17:00:29
+Location: C:\Users\rapol\Downloads\lab_analysis_v6_0_grounded\validation_data
+================================================================================
