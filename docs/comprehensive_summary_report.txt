@@ -1,0 +1,189 @@
+========================================================================================================================
+PHASE 2 v8.0 COMPLETE: COMPREHENSIVE ANALYSIS SUMMARY
+========================================================================================================================
+
+Analysis Date: 2025-12-31 14:37:50
+Total Subjects: 16
+Total Sessions: 48
+Total Trials: 62,494
+
+========================================================================================================================
+INFORMATION GEOMETRY METRICS
+========================================================================================================================
+
+State-Level Manifold Distances:
+  Fatigue                  : Mahal= 11.23, KL= 1776.14, Riem=  2.51
+  Mind-Wandering           : Mahal=  2.33, KL=    9.41, Riem=  1.48
+  Optimal-Engaged          : Mahal=  3.14, KL=   56.92, Riem=  1.73
+  Optimal-Monitoring       : Mahal=  0.00, KL=    0.00, Riem=  0.00
+  Overload                 : Mahal= 13.71, KL=  127.06, Riem=  6.10
+
+Optimal vs Drift Manifold Separation:
+  Optimal Mahalanobis: 1.57
+  Drift Mahalanobis: 9.09
+  Separation Ratio: 5.79x
+
+========================================================================================================================
+MACHINE LEARNING ERROR PREDICTION
+========================================================================================================================
+
+Model Performance (5-Fold Cross-Validation):
+  Best Model: GradientBoosting
+  AUC: 0.6784
+  Accuracy: 0.6830
+  Training Samples: 44,335
+  Error Rate: 59.4%
+  Features Used: 14
+
+Top 10 Predictive Features:
+  z_delta                       : 0.1520
+  z_theta                       : 0.1239
+  z_alpha_relative              : 0.1184
+  z_lz                          : 0.0994
+  z_gamma                       : 0.0797
+  z_beta                        : 0.0687
+  z_pac                         : 0.0624
+  z_alpha                       : 0.0530
+  z_theta_beta_ratio            : 0.0524
+  z_wpe                         : 0.0510
+
+========================================================================================================================
+MARKOV STATE TRANSITIONS
+========================================================================================================================
+
+State Persistence (P_stay):
+  Calibrating              : 0.991
+  Fatigue                  : 0.763
+  Mind-Wandering           : 0.878
+  Optimal-Engaged          : 0.917
+  Optimal-Monitoring       : 0.900
+  Overload                 : 0.400
+
+========================================================================================================================
+4-LEVEL ANALYSIS: OPTIMAL vs DRIFT
+========================================================================================================================
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+LEVEL 1: TRIAL-LEVEL COMPARISON
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Sample Sizes:
+  Optimal trials: 48,944
+  Drift trials: 8,478
+
+Error Risk:
+  Optimal: 44.24 ± 6.61
+  Drift: 49.40 ± 8.57
+  Δ = 5.16 points (11.7% increase)
+  Statistical: t=-63.337, p=0.00e+00, Cohen's d=0.675
+
+Efficiency:
+  Optimal: 63.61 ± 17.81
+  Drift: 52.09 ± 18.31
+  Δ = 11.52 points (18.1% decrease)
+  Statistical: t=54.731, p=0.00e+00, Cohen's d=0.638
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+LEVEL 2: CUMULATIVE WINDOW COMPARISON (2-minute windows)
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Window Sizes:
+  Optimal windows (≤10% drift): 267
+  High-drift windows (≥50% drift): 26
+
+Error Risk:
+  Optimal windows: 43.05 ± 6.15
+  High-drift windows: 56.17 ± 8.21
+  Δ = 13.12 points (30.5% increase)
+
+Efficiency:
+  Optimal windows: 62.65 ± 5.20
+  High-drift windows: 48.28 ± 8.18
+  Δ = 14.37 points (22.9% decrease)
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+LEVEL 3: SESSION-LEVEL COMPARISON
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Correlations (Spearman):
+  Drift % vs Error Risk: ρ = 0.676, p = 1.35e-07
+  Drift % vs Efficiency: ρ = -0.507, p = 2.36e-04
+
+Session Segmentation by Cumulative Drift:
+  HIGH drift (≥15%, n=16):
+    Error Risk: 50.38 ± 6.25
+    Efficiency: 57.93 ± 4.72
+  MEDIUM drift (10-15%, n=8):
+    Error Risk: 43.19 ± 6.89
+    Efficiency: 60.61 ± 3.25
+  LOW drift (<10%, n=24):
+    Error Risk: 40.14 ± 5.44
+    Efficiency: 62.45 ± 3.12
+
+HIGH vs LOW Impact:
+  Error Risk Increase: 10.24 points (25.5%)
+  Efficiency Decrease: 4.51 points (7.2%)
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+LEVEL 4: SUBJECT-LEVEL COMPARISON
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Subject Segmentation by Mean Cumulative Drift:
+
+HIGH DRIFT SUBJECTS (≥15% mean drift, n=6):
+  Subjects: sub-13, sub-14, sub-08, sub-15, sub-05, sub-11
+  Average Error Risk: 46.92 ± 5.78
+  Average Efficiency: 57.48 ± 3.58
+  Total Alerts: 145
+
+MEDIUM DRIFT SUBJECTS (10-15% mean drift, n=4):
+  Subjects: sub-12, sub-06, sub-16, sub-04
+  Average Error Risk: 45.64 ± 3.66
+  Average Efficiency: 60.73 ± 1.53
+  Total Alerts: 60
+
+LOW DRIFT SUBJECTS (<10% mean drift, n=6):
+  Subjects: sub-03, sub-10, sub-02, sub-01, sub-09, sub-07
+  Average Error Risk: 40.15 ± 1.90
+  Average Efficiency: 63.73 ± 1.39
+  Total Alerts: 45
+
+HIGH vs LOW Subject Impact:
+  Error Risk Increase: 6.77 points (16.9%)
+  Efficiency Decrease: 6.26 points (9.8%)
+  Potential Value (HIGH drift subjects): $338/year per user @ $50/point
+
+========================================================================================================================
+KEY FINDINGS SUMMARY
+========================================================================================================================
+
+1. TRIAL-LEVEL IMPACT:
+   • Drift states show 11.7% higher error risk
+   • Drift states show 18.1% lower efficiency
+   • Effect sizes: Cohen's d = 0.675 (risk), 0.638 (efficiency)
+
+2. CUMULATIVE WINDOW IMPACT:
+   • High-drift 2-min windows show 30.5% higher risk
+   • High-drift 2-min windows show 22.9% lower efficiency
+
+3. SESSION-LEVEL CORRELATIONS:
+   • Drift % strongly predicts error risk (ρ = 0.676, p < 0.001)
+   • Drift % strongly predicts efficiency loss (ρ = -0.507, p < 0.001)
+
+4. SUBJECT-LEVEL SEGMENTATION:
+   • 6 high-drift subjects identified
+   • 4 medium-drift subjects identified
+   • 6 low-drift subjects (optimal performers)
+
+5. INFORMATION GEOMETRY:
+   • Drift states are 5.79x further from optimal manifold
+   • Clear manifold separation validates state classification
+
+6. MACHINE LEARNING:
+   • Error prediction AUC = 0.678 (GradientBoosting)
+   • Model accuracy = 0.683
+   • Confirms predictive validity of drift detection
+
+========================================================================================================================
+END OF REPORT
+========================================================================================================================
