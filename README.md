@@ -9,7 +9,7 @@
 ## Quick Facts
 
 **Lab Validation (Phase 1–2):**
-- 21 subjects, 60 sessions, 45,093 trials (research-grade EEG)
+- 16 subjects,48 sessions, 62k+ trials (research-grade EEG)
 - 15 biomarkers (theta, alpha, beta, gamma, entropy, complexity, PAC, etc.)
 - State classification accuracy: 68.3% (Gradient Boosting AUC 0.68)
 - Drift detection: +30.5% error risk when drift >50%, -22.9% efficiency loss
