@@ -37,16 +37,13 @@
 **Objective:** Validate that the 15 EEG biomarkers and hierarchical decision tree can reliably classify cognitive states across diverse subjects and task contexts.
 
 **Design:**
-- 21 subjects, 60 sessions (work-focused tasks: coding, problem-solving, decision-making)
-- Research-grade EEG: 19–32 channels, professional amplifiers, controlled lab environment
-- Three independent raters validated cognitive state labels (inter-rater κ = 0.89)
+- 16 subjects, 48 sessions (work-focused tasks)
+- Research-grade EEG: 3 channels, professional amplifiers, controlled lab environment
 
 **Validation Pipeline:**
-1. **Artifact Rejection:** 58% artifact rate (lab environment highly controlled)
-2. **Feature Extraction:** 15 biomarkers per 2-sec epoch via IIR filters, FFT, entropy (Permutation, Lempel-Ziv, Multiscale)
-3. **Rolling Baseline:** 100-trial chunks (3.3 min), adaptive to circadian drift
-4. **Z-Score Normalization:** Per feature, per trial (relative to rolling baseline)
-5. **Hierarchical Classification:** Tier 1 (Overload) → Tier 2 (Fatigue) → Tier 3 (Mind-Wandering) → Tier 4 (Optimal states)
+1. **Feature Extraction:** 15 biomarkers per 2-sec epoch via IIR filters, FFT, entropy (Permutation, Lempel-Ziv, Multiscale)
+2. **Rolling Baseline:** 100-trial chunks (3.3 min), adaptive to circadian drift
+3. **Z-Score Normalization:** Per feature, per trial (relative to rolling baseline)
 
 **State Distribution Targets vs. Observed:**
 | State | Target Range | Observed Range | Status |
